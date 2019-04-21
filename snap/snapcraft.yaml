@@ -1,0 +1,23 @@
+name: rednotebook
+version: '2.2'
+summary: A cross-platform journal
+description: |
+  RedNotebook is a modern desktop journal. It lets you format, tag and
+  search your entries. You can also add pictures, links and customizable
+  templates, spell check your notes, and export to plain text, HTML,
+  Latex or PDF.
+
+grade: stable
+confinement: devmode
+
+apps:
+  rednotebook:
+    command: desktop-launch $SNAP/bin/rednotebook
+
+parts:
+  rednotebook:
+    after: [desktop-gtk3]
+    plugin: python
+    python-version: python3
+    source: https://github.com/jendrikseipp/rednotebook.git
+    source-tag: v2.2
